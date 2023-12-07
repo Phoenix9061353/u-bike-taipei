@@ -1,6 +1,11 @@
 # 台北市 YouBike 即時站點資訊
 
-### 功能
+### 成品外觀與 demo 網址
+
+![demo picture](/public/demo-pic.png)  
+網站連結：[U bike ｜站點資訊](https://u-bike-practice.netlify.app/main)
+
+### 目前功能
 
 - 具 RWD
 - 縣市搜尋 input（可顯示/收合的縣市清單、具一鍵清除功能、依輸入內容即時反饋縣市清單內容）
