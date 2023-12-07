@@ -12,8 +12,10 @@ const variations = {
 };
 
 const StyledTable = styled.div`
+  grid-row: 4 / 5;
+  grid-column: 1 /-1;
   width: 100%;
-  height: 50vh;
+  max-height: 50vh;
   border: 1px solid var(--color-grey-3);
   border-radius: var(--border-radius-large);
   overflow-x: scroll;

@@ -7,6 +7,8 @@ import DropdownOption from '../ui/DropdownOption';
 import { breakPoint } from '../styles/deviceBreakPoint';
 
 const SearchForm = styled.form`
+  grid-row: 2 /3;
+  grid-column: 1 /-1;
   width: 40%;
   display: flex;
   justify-content: space-between;

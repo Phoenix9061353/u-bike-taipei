@@ -5,8 +5,10 @@ import Checkbox from '../ui/Checkbox';
 import { breakPoint } from '../styles/deviceBreakPoint';
 
 const Container = styled.div`
-  max-width: 40%;
-  min-height: 25rem;
+  max-width: 85%;
+  min-height: 20rem;
+
+  grid-row: 3 / 4;
 
   display: grid;
   grid-template-rows: repeat(4, minmax(min-content, 1fr));
@@ -18,9 +20,10 @@ const Container = styled.div`
   }
 
   @media ${breakPoint.desktop_sm} {
-    max-width: 50%;
+    max-width: 100%;
   }
   @media ${breakPoint.tablet} {
+    grid-column: 1 / -1;
     max-width: 60%;
   }
   @media ${breakPoint.tablet_sm} {
@@ -32,8 +35,8 @@ const Container = styled.div`
 
   @media ${breakPoint.mobile} {
     max-width: 100%;
-    max-height: 25rem;
-    row-gap: 1.75rem;
+    max-height: 20rem;
+    row-gap: 0.75rem;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     overflow: scroll;
   }

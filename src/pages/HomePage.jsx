@@ -11,28 +11,32 @@ import { breakPoint } from '../styles/deviceBreakPoint';
 const HomePageContainer = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
   gap: 4rem;
+
+  display: grid;
+  grid-template-rows: repeat(3, max-content) 1fr;
+  grid-template-columns: repeat(2, 1fr);
 
   h1 {
     font-size: var(--default-font-size-large);
     font-weight: 700;
     color: var(--brand-color);
     letter-spacing: 4.32px;
+
+    grid-row: 1 / 2;
+    grid-column: 1 / span 2;
   }
 
   img {
     display: inline-block;
-    position: absolute;
-    top: 35vh;
-    right: 15vw;
+    grid-row: 3/ 4;
+    grid-column: 2 /-1;
+    align-self: end;
   }
 
   @media ${breakPoint.desktop_sm} {
     img {
-      width: 30%;
-      top: 40vh;
+      width: 80%;
     }
   }
   @media ${breakPoint.tablet} {
