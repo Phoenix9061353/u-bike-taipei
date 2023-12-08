@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { useData } from '../services/useData';
 import styled from 'styled-components';
-import Table from '../ui/Table';
-import DataRow from '../ui/DataRow';
+import { breakPoint } from '../styles/deviceBreakPoint';
 import Spinner from '../ui/Spinner';
 import Search from '../components/Search';
 import DistrictSelect from '../components/DistrictSelect';
-import { breakPoint } from '../styles/deviceBreakPoint';
+import HomepageTable from '../components/HomepageTable';
 
 const HomePageContainer = styled.div`
   width: 100%;
@@ -54,38 +53,38 @@ const HomePageContainer = styled.div`
   }
 `;
 
-function HomePage() {
-  const { isLoading, sites } = useData();
+function HomeLayout({ children }) {
+  const { isLoading } = useData();
   const [city, setCity] = useState('');
 
   return (
     <HomePageContainer>
       {isLoading ? (
-        <Spinner />
+        <Spinner
+          style={{
+            gridColumn: '1 / -1',
+            gridRow: '1 / -1',
+            alignSelf: 'center',
+          }}
+        />
       ) : (
         <>
           <h1>站點資訊</h1>
           <img src='Frame.png' alt='people with bike' />
           <Search city={city} setCity={setCity} />
           <DistrictSelect city={city} />
-          <Table>
-            <Table.Header>
-              <div>縣市</div>
-              <div>區域</div>
-              <div>站點名稱</div>
-              <div>可借車輛</div>
-              <div>可還空位</div>
-            </Table.Header>
-            <Table.Body
-              data={sites}
-              render={(site, i) => (
-                <DataRow key={site.sno} data={site} variation={i % 2 === 0} />
-              )}
-            />
-          </Table>
+          {children}
         </>
       )}
     </HomePageContainer>
+  );
+}
+
+function HomePage() {
+  return (
+    <HomeLayout>
+      <HomepageTable />
+    </HomeLayout>
   );
 }
 
