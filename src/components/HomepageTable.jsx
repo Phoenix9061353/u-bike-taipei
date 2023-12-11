@@ -7,11 +7,11 @@ function HomepageTable() {
   return (
     <Table>
       <Table.Header>
-        <div>縣市</div>
-        <div>區域</div>
-        <div>站點名稱</div>
-        <div>可借車輛</div>
-        <div>可還空位</div>
+        <span>縣市</span>
+        <span>區域</span>
+        <span>站點名稱</span>
+        <span>可借車輛</span>
+        <span>可還空位</span>
       </Table.Header>
       <Table.Body
         data={sites}

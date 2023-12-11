@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Table from './Table';
 
-const Number = styled.div`
+const Number = styled.span`
   font-size: var(--default-font-size-medium);
   font-weight: 700;
   color: var(--brand-color);
@@ -10,9 +10,9 @@ const Number = styled.div`
 function DataRow({ data: { sarea, sna, sbi, bemp }, variation }) {
   return (
     <Table.Row variation={variation}>
-      <div>台北市</div>
-      <div>{sarea}</div>
-      <div>{sna.split('_')[1]}</div>
+      <span>台北市</span>
+      <span>{sarea}</span>
+      <span>{sna.split('_')[1]}</span>
       <Number>{sbi}</Number>
       <Number>{bemp}</Number>
     </Table.Row>
