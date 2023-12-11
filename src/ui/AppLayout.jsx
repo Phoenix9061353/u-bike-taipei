@@ -29,20 +29,12 @@ const Main = styled.main`
   }
 `;
 
-const Container = styled.div`
-  max-width: 120rem;
-  margin: 0 auto;
-  height: 100%;
-`;
-
 function AppLayout() {
   return (
     <StyledAppLayout>
       <Header />
       <Main>
-        <Container>
-          <Outlet />
-        </Container>
+        <Outlet />
       </Main>
     </StyledAppLayout>
   );
