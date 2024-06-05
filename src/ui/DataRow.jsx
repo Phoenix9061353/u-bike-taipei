@@ -7,14 +7,17 @@ const Number = styled.span`
   color: var(--brand-color);
 `;
 
-function DataRow({ data: { sarea, sna, sbi, bemp }, variation }) {
+function DataRow({
+  data: { sarea, sna, available_rent_bikes, available_return_bikes },
+  variation,
+}) {
   return (
     <Table.Row variation={variation}>
       <span>台北市</span>
       <span>{sarea}</span>
       <span>{sna.split('_')[1]}</span>
-      <Number>{sbi}</Number>
-      <Number>{bemp}</Number>
+      <Number>{available_rent_bikes}</Number>
+      <Number>{available_return_bikes}</Number>
     </Table.Row>
   );
 }
